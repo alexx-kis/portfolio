@@ -38,6 +38,7 @@ function Menu(menuProps: MenuProps): React.JSX.Element {
             <li key={index} className={s.menuItem}>
               <Link
                 href={link}
+                data-name={name}
                 className={clsx(
                   s.menuLink,
                   { [s._active]: pathname === link }
@@ -49,7 +50,9 @@ function Menu(menuProps: MenuProps): React.JSX.Element {
                   }
                 }}
               >
-                {name}
+                <p className={s.linkText}>
+                  {name}
+                </p>
               </Link>
             </li>
           );

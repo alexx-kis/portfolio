@@ -1,6 +1,7 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import './main-button.scss';
+import s from './main-button.module.scss';
 
 // ^======================== MainButton ========================^ //
 type MainButtonProps = {
@@ -14,15 +15,15 @@ function MainButton(mainButtonProps: MainButtonProps): React.JSX.Element {
   const { className, href, text, iconPath, onMainButtonClick } = mainButtonProps;
   return (
     <Link
-      className={`${className} main-button`}
+      className={clsx(className, s.mainButton)}
       href={href}
       onClick={onMainButtonClick}
     >
-      <div className='main-button__text'>
+      <div className={s.text}>
         {text}
       </div>
       <Image
-        className='main-button__icon'
+        className={s.icon}
         src={iconPath}
         width={10}
         height={10}

@@ -3,33 +3,33 @@ import { useGlowingHover } from '@/hooks/useGlowingHover';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import './skill.scss';
+import s from './skill.module.scss';
 
 // ^======================== Skill ========================^ //
 
 type SkillProps = {
-  bemClassName: string;
+  className: string;
   skillIcon: string;
   skillName: string;
   skillDescription?: string;
 };
 
 export default function Skill(skillProps: SkillProps): React.JSX.Element {
-  const { bemClassName, skillIcon, skillName, skillDescription } = skillProps;
+  const { className, skillIcon, skillName, skillDescription } = skillProps;
   const pathname = usePathname();
   const skillRef = useGlowingHover();
   return (
     <li
       className={clsx(
-        `${bemClassName} skill`,
-        { '_expanded': pathname === AppRoute.ABOUT }
+        className, s.skill,
+        { [s._expanded]: pathname === AppRoute.ABOUT }
       )}
     >
       <div
-        className='skill__inner'
+        className={s.inner}
         ref={skillRef}
       >
-        <div className='skill__icon'>
+        <div className={s.icon}>
           <Image
             src={skillIcon}
             alt={skillName}
@@ -37,14 +37,13 @@ export default function Skill(skillProps: SkillProps): React.JSX.Element {
             height={20}
           />
         </div>
-        <div className='skill__name'>{skillName}</div>
+        <div className={s.name}>{skillName}</div>
       </div>
-      {
-        skillDescription &&
-        <p className='skill__description'>
+      {skillDescription && (
+        <p className={s.description}>
           {skillDescription}
         </p>
-      }
+      )}
     </li>
   );
 };

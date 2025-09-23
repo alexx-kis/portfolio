@@ -24,7 +24,6 @@ export function useGlowingHover() {
       const bgInner = document.createElement('div');
       bgInner.style.cssText = `
         border-radius: inherit;
-        background-image: radial-gradient(${initialBackgroundColor}, ${initialBackgroundColor});
         transition: all 250ms;
         position: absolute;
         inset: max(${1 / 1440 * 100}vw, 1px);
@@ -34,7 +33,6 @@ export function useGlowingHover() {
 
       const handleMouseLeave = () => {
         bgElement.style.opacity = '0';
-        bgElement.style.backgroundImage = `radial-gradient(${initialBackgroundColor}, ${initialBackgroundColor})`;
       };
 
       const handleMouseEnter = () => {

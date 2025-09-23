@@ -1,0 +1,93 @@
+@use '@/styles/abstracts' as *;
+
+// @======================== about ========================@ //
+
+.section {
+  position: relative;
+  z-index: 1;
+  background-color: var(--bg);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: desk(50px, 25px);
+
+  @include TABLET {
+    gap: tab(25px, 20spx);
+  }
+
+  @include MIDDLE {
+    flex-direction: column;
+  }
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: desk(32px);
+
+  @include TABLET {
+    gap: tab(32px, 18px);
+  }
+
+  @include MIDDLE {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.heading {
+  font-size: desk(40px, 30px);
+  text-align: left;
+  text-wrap: balance;
+  margin-bottom: desk(20px);
+
+  @include TABLET {
+    font-size: tab(30px, 24px);
+    margin-bottom: tab(20px, 12px);
+  }
+}
+
+.imageWrapper {
+  overflow: clip;
+  height: auto;
+  
+
+  @include MIDDLE {
+    height: mid(400px, 200px);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 10%;
+  }
+}
+
+.info {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.textBox {
+  margin-top: auto;
+  gap: desk(12px, 8px);
+}
+
+.text {
+  font-size: desk(20px, 18px);
+  text-align: justify;
+
+  @include TABLET {
+    font-size: tab(20px, 14px);
+  }
+}
+
+.button {
+  align-self: flex-start;
+}

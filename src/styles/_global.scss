@@ -9,16 +9,18 @@ html {
   --main: #EAEAEA;
   --secondary: #9CA3AF;
   --secondary50: #9ca3af80;
-  --bg: #0D1117;
-  --bgSecondary: #15212b;
+  --bg: #1b1b1b;
+  --bgSecondary: #28292b;
   --accent: #1e6372;
   --hover: #2e95af;
   --orange: #fa7c27;
-  --radius: desk(16px);
+  --lightOrange: #fa983d;
+  --white: #fff;
+  --orangeGradient: linear-gradient(to right, var(--orange), var(--lightOrange));
 }
 
 body {
-  background-image: $mainGradient;
+  background-image: linear-gradient(135deg, var(--bg) 0%, var(--bgSecondary) 100%);
   transition: opacity 250ms;
 }
 
@@ -27,7 +29,6 @@ body {
 }
 
 .sections-wrapper {
-  background-image: $mainGradient;
   margin-top: calc(-1 * desk(4px));
   color: #fff;
   box-shadow: 0 -80px 50px 50px #1e3040;

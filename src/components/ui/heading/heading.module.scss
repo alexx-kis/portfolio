@@ -1,11 +1,10 @@
-.mainHeading {
+.heading {
   font-family: druk, Arial, Helvetica, sans-serif;
-  scale: 1 1.2;
+  font-size: desk(64px, 50px);
   font-weight: 900;
   text-align: center;
-  font-size: desk(72px, 60px);
 
   @include TABLET {
-    font-size: tab(60px, 40px);
+    font-size: tab(50px, 30px);
   }
 }

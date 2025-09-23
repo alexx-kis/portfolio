@@ -1,0 +1,31 @@
+@use '@/styles/abstracts' as *;
+
+// ^======================== main-button ========================^ //
+
+.mainButton {
+  display: inline-flex;
+  align-items: center;
+  gap: desk(8px);
+  padding-inline: desk(20px);
+  padding-block: desk(14px);
+  // box-shadow: $boxShadow;
+  box-shadow: desk(1px) neg(desk(1px)) desk(5px) 0 #ffffff6e;
+  background-image: var(--orangeGradient);
+  color: var(--white);
+  font-size: desk(20px);
+  transition: all 250ms;
+  border-radius: desk(16px);
+
+  @include HOVER {
+    box-shadow: 0 0 desk(20px) desk(2px) var(--secondary50);
+  }
+}
+
+.text {
+  font-size: desk(20px, 18px);
+}
+
+.icon {
+  @include square(desk(20px, 14px));
+  translate: 0 desk(1px, 1px);
+}

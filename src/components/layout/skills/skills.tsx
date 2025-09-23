@@ -6,10 +6,13 @@ import { SkillType } from '@/types/types';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import './skills.scss';
+
 // @======================== Skills ========================@ //
+
 type SkillsProps = {
   data: SkillType[];
 };
+
 export default function Skills(skillsProps: SkillsProps) {
   const { data } = skillsProps;
   const pathname = usePathname();
@@ -32,7 +35,7 @@ export default function Skills(skillsProps: SkillsProps) {
                 {skillsItems.map(({ skillIcon, skillName, skillDescription }, index) => {
                   return (
                     <Skill
-                      bemClassName='skills__list-item'
+                      className='skills__list-item'
                       key={index}
                       skillIcon={skillIcon}
                       skillName={skillName}

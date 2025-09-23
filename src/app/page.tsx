@@ -13,8 +13,8 @@ export default function Page() {
   return (
     <main>
       <HeroSection />
-        <AboutSection />
-        <WorksSection />
+      <AboutSection />
+      <WorksSection />
       {/* <section className='sections-wrapper'>
       </section> */}
     </main>
