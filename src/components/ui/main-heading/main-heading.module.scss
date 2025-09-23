@@ -1,0 +1,10 @@
+.mainHeading {
+  font-family: druk, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  text-align: center;
+  font-size: desk(72px, 60px);
+
+  @include TABLET {
+    font-size: tab(60px, 40px);
+  }
+}

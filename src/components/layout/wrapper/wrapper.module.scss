@@ -1,0 +1,14 @@
+// $======================== wrapper ========================$ //
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow: clip;
+  background-color: var(--bg);
+  color: var(--main);
+  font-family: lato, Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}

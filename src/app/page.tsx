@@ -13,10 +13,10 @@ export default function Page() {
   return (
     <main>
       <HeroSection />
-      <section className='sections-wrapper'>
         <AboutSection />
         <WorksSection />
-      </section>
+      {/* <section className='sections-wrapper'>
+      </section> */}
     </main>
   );
 }

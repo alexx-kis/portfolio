@@ -21,7 +21,7 @@ function WorksSection(): React.JSX.Element {
           <h2 className='works__heading heading'>My works</h2>
           <WorksList worksList={worksList} />
           <MainButton
-            bemClassName='works__button'
+            className='works__button'
             href={AppRoute.WORKS}
             text='See more'
             iconPath={`${basePath}/img/icons/go-to-arrow.svg`}

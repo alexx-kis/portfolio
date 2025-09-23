@@ -6,6 +6,15 @@ html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   min-height: 100%;
+  --main: #EAEAEA;
+  --secondary: #9CA3AF;
+  --secondary50: #9ca3af80;
+  --bg: #0D1117;
+  --bgSecondary: #15212b;
+  --accent: #1e6372;
+  --hover: #2e95af;
+  --orange: #fa7c27;
+  --radius: desk(16px);
 }
 
 body {
@@ -15,19 +24,6 @@ body {
 
 .no-scroll {
   overflow: hidden;
-}
-
-.wrapper {
-  width: 100%;
-  // min-height: 100%;
-  overflow: clip;
-  position: relative;
-  color: #fff;
-  font-family: lato, Arial, Helvetica, sans-serif;
-  line-height: 1.4;
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
 }
 
 .sections-wrapper {

@@ -4,17 +4,17 @@ import './main-button.scss';
 
 // ^======================== MainButton ========================^ //
 type MainButtonProps = {
-  bemClassName: string;
+  className: string;
   href: string;
   text: string;
   iconPath: string;
   onMainButtonClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 function MainButton(mainButtonProps: MainButtonProps): React.JSX.Element {
-  const { bemClassName, href, text, iconPath, onMainButtonClick } = mainButtonProps;
+  const { className, href, text, iconPath, onMainButtonClick } = mainButtonProps;
   return (
     <Link
-      className={`${bemClassName} main-button`}
+      className={`${className} main-button`}
       href={href}
       onClick={onMainButtonClick}
     >

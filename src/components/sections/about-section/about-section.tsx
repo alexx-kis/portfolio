@@ -5,7 +5,6 @@ import MainButton from '@/components/ui/main-button/main-button';
 import { AppRoute, basePath } from '@/constants/const';
 import { aboutSectionText } from '@/data/about';
 import { SKILLS_CONCISE } from '@/data/skills';
-import { useAboutAnimation } from '@/hooks/animation/use-about-animation';
 import { useTransitionLink } from '@/hooks/use-transition-link';
 import { splitTextToParagraphs } from '@/utils/utils';
 import Image from 'next/image';
@@ -14,7 +13,7 @@ import './about-section.scss';
 // @======================== AboutSection ========================@ //
 
 function AboutSection(): React.JSX.Element {
-  useAboutAnimation();
+  // useAboutAnimation();
 
   const { handleTransition } = useTransitionLink();
 
@@ -47,7 +46,7 @@ function AboutSection(): React.JSX.Element {
           </div>
           <Skills data={SKILLS_CONCISE} />
           <MainButton
-            bemClassName='about__button'
+            className='about__button'
             href={AppRoute.ABOUT}
             text='Learn more'
             iconPath={`${basePath}/img/icons/go-to-arrow.svg`}

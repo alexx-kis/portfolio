@@ -1,8 +1,11 @@
+import Aside from '@/components/layout/aside/aside';
 import Footer from '@/components/layout/footer/footer';
 import Header from '@/components/layout/header/header';
+import Wrapper from '@/components/layout/wrapper/wrapper';
 import Preloader from '@/components/preloader/preloader';
+import Providers from '@/components/utility/providers/providers';
 import '@/styles/index.scss';
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 // $======================== RootLayout ========================$ //
 
@@ -15,12 +18,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
-        <Preloader />
-        <div className='wrapper'>
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        <Providers>
+          <Preloader />
+          <Wrapper>
+            <Header />
+            <Aside />
+            {children}
+            <Footer />
+          </Wrapper>
+        </Providers>
       </body>
     </html>
   );

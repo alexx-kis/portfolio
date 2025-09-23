@@ -1,0 +1,23 @@
+.aside {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+
+  @include MIDDLE {
+    display: block;
+    translate: 100%;
+    transition: all 250ms;
+  }
+}
+
+._open {
+  translate: 0;
+}
+
+.menu {
+  flex-direction: column;
+  justify-content: space-evenly;
+  backdrop-filter: blur(desk(24px));
+  transition: all .3s;
+}

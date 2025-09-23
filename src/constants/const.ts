@@ -28,3 +28,11 @@ export const HEADER_MENU_ITEMS = [
 ];
 
 export const PAGE_TRANSITION_TIME = 180;
+
+export enum NameSpace {
+  OPEN_ELEMENTS = 'OPEN_ELEMENTS'
+}
+
+export enum OpenElement {
+  ASIDE = 'ASIDE',
+}
