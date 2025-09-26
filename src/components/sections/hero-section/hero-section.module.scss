@@ -1,37 +1,68 @@
 // @======================== hero-section ========================@ //
 
 .section {
-  height: 100dvh;
+  $basePath: var(--basePath);
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding-bottom: desk(20px);
   position: relative;
   z-index: 0;
-  $basePath: var(--basePath);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 100%;
 }
 
 .inner {
+  flex: 1 1 auto;
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   height: 100%;
+  width: 100%;
+  gap: desk(20px);
+  justify-content: space-between;
+
+  @include MIDDLE {
+    flex-direction: column;
+    justify-content: center;
+    gap: mid(60px, 50px);
+  }
+}
+
+.info {
+  width: 100%;
+  // flex-shrink: 0;
+  flex-grow: 0;
+  max-width: desk(600px, 600px);
+
+  @include MIDDLE {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .heading {
   align-self: flex-start;
   margin-bottom: desk(10px);
+  text-align: left;
+
+  @include MIDDLE {
+    align-self: center;
+  }
 }
 
 .text {
-  font-size: desk(36px, 30px);
-  font-family: druk;
   margin-bottom: desk(50px);
+  font-family: druk;
+  font-size: desk(36px, 25px);
   scale: 1 1.2;
 
   @include TABLET {
-    font-size: tab(30px, 20px);
     margin-bottom: tab(50px, 20px);
+    font-size: tab(25px, 16px);
   }
 }
 
@@ -39,4 +70,61 @@
 
 .button {
   align-self: flex-start;
+}
+
+.imageBox {
+  position: relative;
+  width: desk(580px, 580px);
+  height: auto;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+    background-image: linear-gradient(transparent 10%, #212223 80%);
+  }
+
+  @include MIDDLE {
+    width: mid(340px, 270px);
+  }
+}
+
+.image {
+  @include square(100%);
+}
+
+.circle {
+  aspect-ratio: 1;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: inset 0 0 desk(30px, 20px) desk(2px, 1px) var(--white50);
+  background-image: radial-gradient(#ff7418, var(--lightOrange));
+
+  &._top {
+    width: desk(100px, 70px);
+    left: desk(200px, 140px);
+    top: desk(130px, 130px);
+    animation: floating 2s ease-in-out infinite alternate;
+
+    @include MIDDLE {
+      top: mid(80px, 80px);
+      left: mid(80px, 50px);
+    }
+  }
+
+  &._bottom {
+    width: desk(60px, 40px);
+    left: desk(630px, 290px);
+    bottom: desk(200px, 70px);
+    animation: floating 1s ease-in-out infinite alternate;
+
+    @include MIDDLE {
+      left: auto;
+      right: mid(100px, 70px);
+      bottom: mid(50px, 50px);
+    }
+  }
 }

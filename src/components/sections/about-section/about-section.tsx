@@ -9,7 +9,6 @@ import { aboutSectionText } from '@/data/about';
 import { SKILLS_CONCISE } from '@/data/skills';
 import { useTransitionLink } from '@/hooks/use-transition-link';
 import { splitTextToParagraphs } from '@/utils/utils';
-import Image from 'next/image';
 import s from './about-section.module.scss';
 
 // @======================== AboutSection ========================@ //
@@ -34,16 +33,8 @@ function AboutSection(): React.JSX.Element {
                 </p>
               ))}
             </div>
-            <div className={s.imageWrapper}>
-              <Image
-                src={`${basePath}/img/avatar-big.png`}
-                alt=''
-                width={1}
-                height={1}
-              />
-            </div>
+            <Skills data={SKILLS_CONCISE} />
           </div>
-          <Skills data={SKILLS_CONCISE} />
           <MainButton
             className={s.button}
             href={AppRoute.ABOUT}

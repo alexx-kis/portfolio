@@ -8,16 +8,29 @@
   gap: desk(8px);
   padding-inline: desk(20px);
   padding-block: desk(14px);
-  // box-shadow: $boxShadow;
-  box-shadow: desk(1px) neg(desk(1px)) desk(5px) 0 #ffffff6e;
+  position: relative;
+  border-radius: desk(16px);
+  box-shadow: inset 0 0 desk(5px) desk(1px) #ffffff6e;
   background-image: var(--orangeGradient);
   color: var(--white);
   font-size: desk(20px);
   transition: all 250ms;
-  border-radius: desk(16px);
 
   @include HOVER {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
     box-shadow: 0 0 desk(20px) desk(2px) var(--secondary50);
+    transition: opacity 250ms;
   }
 }
 
@@ -26,6 +39,6 @@
 }
 
 .icon {
-  @include square(desk(20px, 14px));
   translate: 0 desk(1px, 1px);
+  @include square(desk(20px, 14px));
 }

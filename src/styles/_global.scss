@@ -10,17 +10,21 @@ html {
   --secondary: #9CA3AF;
   --secondary50: #9ca3af80;
   --bg: #1b1b1b;
+  --bgDark: #0f0f0f;
   --bgSecondary: #28292b;
   --accent: #1e6372;
   --hover: #2e95af;
   --orange: #fa7c27;
   --lightOrange: #fa983d;
   --white: #fff;
+  --white50: #ffffff80;
   --orangeGradient: linear-gradient(to right, var(--orange), var(--lightOrange));
+  --grayGradient: linear-gradient(135deg, var(--bg) 0%, var(--bgSecondary) 100%);
+  --radialGradient: radial-gradient(var(--orange), var(--lightOrange))
 }
 
 body {
-  background-image: linear-gradient(135deg, var(--bg) 0%, var(--bgSecondary) 100%);
+  background-image: var(--grayGradient);
   transition: opacity 250ms;
 }
 
@@ -38,10 +42,10 @@ body {
 }
 
 section {
-  padding-block: desk(60px, 50px);
+  padding-block: desk(70px, 60px);
 
   @include TABLET {
-    padding-block: tab(50px, 40px);
+    // padding-block: tab(50px, 40px);
   }
 }
 

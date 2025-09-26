@@ -5,10 +5,12 @@
 .work {
   width: 100%;
   height: 100%;
-  padding: desk(14px);
+  padding: desk(16px);
   box-shadow: $boxShadow;
   background-color: #ffffff09;
   transition: all 250ms;
+  border-radius: desk(16px);
+  backdrop-filter: blur(desk(24px));
 
   @include MIDDLE {
     flex-shrink: 0;
@@ -68,6 +70,7 @@
     overflow: clip;
     object-fit: cover;
     transition: all .3s;
+    @include border-radius-top(desk(10px));
 
     @include MIDDLE {
       width: auto;

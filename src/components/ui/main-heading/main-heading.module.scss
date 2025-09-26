@@ -3,9 +3,9 @@
   scale: 1 1.2;
   font-weight: 900;
   text-align: center;
-  font-size: desk(72px, 60px);
+  font-size: desk(72px, 50px);
 
   @include TABLET {
-    font-size: tab(60px, 40px);
+    font-size: tab(50px, 32px);
   }
 }
