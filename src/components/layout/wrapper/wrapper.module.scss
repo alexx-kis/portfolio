@@ -13,3 +13,10 @@
   line-height: 1.4;
   background-image: linear-gradient(135deg, var(--bg) 0%, var(--bgSecondary) 100%);
 }
+
+.bg {
+  z-index: unset;
+  opacity: 0.10;
+  background-size: desk(20px);
+  position: fixed;
+}

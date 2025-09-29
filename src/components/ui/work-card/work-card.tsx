@@ -1,14 +1,15 @@
-'use client'
+'use client';
 
 import { MediaQuery } from '@/constants/viewport';
 import { useMediaQuery } from '@/hooks/use-media-query';
+import clsx from 'clsx';
 import Image from 'next/image';
 import { useState } from 'react';
-import './work.scss';
+import s from './work-card.module.scss';
 
 // ^======================== Work ========================^ //
 
-type WorkProps = {
+type WorkCardProps = {
   className: string;
   href: string;
   label: string;
@@ -20,14 +21,14 @@ type WorkProps = {
   gifMobSrc: string;
 };
 
-function Work(workProps: WorkProps): React.JSX.Element {
-  const { className, href, label, title, desc, technologies, imgSrc, gifSrc, gifMobSrc } = workProps;
+function WorkCard(workCardProps: WorkCardProps): React.JSX.Element {
+  const { className, href, label, title, desc, technologies, imgSrc, gifSrc, gifMobSrc } = workCardProps;
   const [isHovered, setIsHovered] = useState(false);
   const isMobileScreen = useMediaQuery(MediaQuery.MOBILE);
 
   return (
     <li
-      className={`${className} work`}
+      className={clsx(className, s.workCard)}
       onMouseEnter={() => {
         setIsHovered(true);
       }}
@@ -35,26 +36,22 @@ function Work(workProps: WorkProps): React.JSX.Element {
         setIsHovered(false);
       }}
     >
-      <a href={href} className='work__link' aria-label={label}>
-        <div className='work__image-box'>
+      <a href={href} className={s.link} aria-label={label}>
+        <div className={s.imageBox}>
           <Image
-            className='work__image'
+            className={s.image}
             src={!isMobileScreen ? (isHovered ? gifSrc : imgSrc) : gifMobSrc}
             alt=''
             width={417}
             height={234}
           />
         </div>
-        <div className='work__info'>
-          <p className='work__title'>
-            {title}
-          </p>
-          <p className='work__desc'>
-            {desc}
-          </p>
-          <ul className='work__technologies'>
+        <div className={s.info}>
+          <p className={s.title}>{title}</p>
+          <p className={s.description}>{desc}</p>
+          <ul className={s.technologies}>
             {technologies.map((item) => (
-              <li key={item} className='work__technology'>
+              <li key={item} className={s.technology}>
                 {item}
               </li>
             ))}
@@ -64,4 +61,4 @@ function Work(workProps: WorkProps): React.JSX.Element {
     </li>
   );
 }
-export default Work;
+export default WorkCard;

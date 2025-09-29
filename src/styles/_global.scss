@@ -20,7 +20,7 @@ html {
   --white50: #ffffff80;
   --orangeGradient: linear-gradient(to right, var(--orange), var(--lightOrange));
   --grayGradient: linear-gradient(135deg, var(--bg) 0%, var(--bgSecondary) 100%);
-  --radialGradient: radial-gradient(var(--orange), var(--lightOrange))
+  --radialGradient: radial-gradient(var(--orange), var(--lightOrange));
 }
 
 body {

@@ -15,8 +15,6 @@ export default function Page() {
       <HeroSection />
       <AboutSection />
       <WorksSection />
-      {/* <section className='sections-wrapper'>
-      </section> */}
     </main>
   );
 }

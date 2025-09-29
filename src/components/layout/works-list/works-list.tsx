@@ -1,4 +1,4 @@
-import Work from '@/components/ui/work/work';
+import WorkCard from '@/components/ui/work-card/work-card';
 import { WorkType } from '@/types/types';
 import './works-list.scss';
 
@@ -14,7 +14,7 @@ function WorksList(worksProps: WorksProps): React.JSX.Element {
     <ul className='works-list'>
       {worksList.map(({ href, label, title, desc, technologies, imgSrc, gifSrc, gifMobSrc }) => {
         return (
-          <Work
+          <WorkCard
             className={'works-list__item'}
             key={label}
             href={href}
