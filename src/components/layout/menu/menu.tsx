@@ -58,7 +58,7 @@ function Menu(menuProps: MenuProps): React.JSX.Element {
           );
         })}
       </ul>
-      <HeaderLang />
+      {/* <HeaderLang /> */}
       <HeaderSocials />
     </div>
   );
