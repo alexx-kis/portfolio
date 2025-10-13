@@ -13,7 +13,7 @@
   }
 }
 
-.menuLinks {
+.menu_links {
   flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
@@ -26,7 +26,7 @@
   }
 }
 
-.menuLink {
+.menu_link {
   position: relative;
   color: var(--secondary);
   font-size: desk(18px, 16px);
@@ -56,12 +56,7 @@
 
   &._active {
     color: transparent;
-    font-size: desk(20px, 18px);
     font-weight: 700;
-
-    @include MIDDLE {
-      font-size: mid(40px, 32px);
-    }
 
     &::after {
       opacity: 1;
@@ -70,7 +65,7 @@
 
   &:hover {
 
-    .linkText {
+    .link_text {
       opacity: 0;
       transition: opacity 500ms;
     }
@@ -81,6 +76,6 @@
   }
 }
 
-.linkText {
+.link_text {
   transition: opacity 100ms;
 }

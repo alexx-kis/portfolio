@@ -19,9 +19,8 @@ function MainButton(mainButtonProps: MainButtonProps): React.JSX.Element {
       href={href}
       onClick={onMainButtonClick}
     >
-      <div className={s.text}>
-        {text}
-      </div>
+      <div className={s.blink} />
+      <p className={s.text}>{text}</p>
       <Image
         className={s.icon}
         src={iconPath}

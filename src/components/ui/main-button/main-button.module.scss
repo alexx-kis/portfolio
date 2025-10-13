@@ -1,5 +1,3 @@
-@use '@/styles/abstracts' as *;
-
 // ^======================== main-button ========================^ //
 
 .mainButton {
@@ -15,10 +13,15 @@
   color: var(--white);
   font-size: desk(20px);
   transition: all 250ms;
+  overflow: clip;
 
   @include HOVER {
     &::after {
       opacity: 1;
+    }
+
+    .blink {
+      animation: slide 750ms ease-in-out forwards;
     }
   }
 
@@ -41,4 +44,20 @@
 .icon {
   translate: 0 desk(1px, 1px);
   @include square(desk(20px, 14px));
+}
+
+.blink {
+  height: 100%;
+  width: 10%;
+  position: absolute;
+  transform: skew(-20deg);
+  background-color: #ffffff34;
+  translate: -130%;
+  left: 0;
+}
+
+@keyframes slide {
+  100% {
+    left: 120%;
+  }
 }

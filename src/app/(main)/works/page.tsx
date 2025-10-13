@@ -1,6 +1,4 @@
-import Works from '@/components/layout/works-list/works-list';
-import { WORKS } from '@/data/works';
-import './works-page.scss';
+import WorksHero from '@/components/sections/works-hero/works-hero';
 import { Metadata } from 'next';
 
 // #======================== WorksPage ========================# //
@@ -12,14 +10,7 @@ export const metadata: Metadata = {
 function Page(): React.JSX.Element {
   return (
     <main>
-      <section className='works-hero'>
-        <div className='container'>
-          <h2 className='works-hero__heading heading _main'>
-            My Works
-          </h2>
-          <Works worksList={WORKS} />
-        </div>
-      </section>
+      <WorksHero />
     </main>
   );
 }

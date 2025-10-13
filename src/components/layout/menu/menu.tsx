@@ -7,7 +7,7 @@ import { useAppDispatch } from '@/store/store-hooks';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import HeaderLang from '../header-lang/header-lang';
+// import HeaderLang from '../header-lang/header-lang';
 import HeaderSocials from '../header-socials/header-socials';
 import s from './menu.module.scss';
 
@@ -32,15 +32,15 @@ function Menu(menuProps: MenuProps): React.JSX.Element {
 
   return (
     <div className={clsx(className, s.menu)}>
-      <ul className={s.menuLinks}>
+      <ul className={s.menu_links}>
         {HEADER_MENU_ITEMS.map(({ link, name }, index) => {
           return (
-            <li key={index} className={s.menuItem}>
+            <li key={index} className={s.menu_item}>
               <Link
                 href={link}
                 data-name={name}
                 className={clsx(
-                  s.menuLink,
+                  s.menu_link,
                   { [s._active]: pathname === link }
                 )}
                 onClick={(e) => {
@@ -50,7 +50,7 @@ function Menu(menuProps: MenuProps): React.JSX.Element {
                   }
                 }}
               >
-                <p className={s.linkText}>
+                <p className={s.link_text}>
                   {name}
                 </p>
               </Link>

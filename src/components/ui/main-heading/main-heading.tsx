@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { ReactNode } from 'react';
+import { ReactNode, RefObject } from 'react';
 import s from './main-heading.module.scss';
 
 // ^======================== MainHeading ========================^ //
@@ -7,14 +7,15 @@ import s from './main-heading.module.scss';
 type MainHeadingProps = {
   children: ReactNode;
   className: string;
+  ref?: RefObject<HTMLHeadingElement | null>;
 };
 
 function MainHeading(mainHeadingProps: MainHeadingProps): React.JSX.Element {
 
-  const { children, className } = mainHeadingProps;
+  const { children, className, ref } = mainHeadingProps;
 
   return (
-    <h1 className={clsx(className, s.mainHeading)}>{children}</h1>
+    <h1 className={clsx(className, s.mainHeading)} ref={ref}>{children}</h1>
   );
 }
 export default MainHeading;

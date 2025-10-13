@@ -4,29 +4,85 @@ import Background from '@/components/ui/background/background';
 import MainButton from '@/components/ui/main-button/main-button';
 import MainHeading from '@/components/ui/main-heading/main-heading';
 import { basePath } from '@/constants/const';
+import { useMouseMove } from '@/hooks/use-mouse-move';
+import { gsap, useGSAP } from '@/lib/gsap';
 import clsx from 'clsx';
 import Image from 'next/image';
+import { useRef } from 'react';
 import s from './hero-section.module.scss';
 
 // @======================== HeroSection ========================@ //
 
 function HeroSection(): React.JSX.Element {
-  // useHeroAnimation();
+
+  const refs = {
+    section: useRef<HTMLDivElement | null>(null),
+    heading: useRef<HTMLHeadingElement | null>(null),
+    text: useRef<HTMLDivElement | null>(null),
+    button: useRef<HTMLDivElement | null>(null),
+    image: useRef<HTMLDivElement | null>(null),
+    circles: [
+      useRef<HTMLDivElement | null>(null),
+      useRef<HTMLDivElement | null>(null),
+    ]
+  };
+
+  useGSAP(() => {
+    gsap.timeline({
+      defaults: {
+        duration: 0.3,
+        ease: 'power2.out'
+      }
+    })
+      .to(refs.section.current, {
+        autoAlpha: 1
+      })
+      .from(refs.heading.current, {
+        xPercent: -25,
+        opacity: 0,
+      })
+      .from(refs.text.current, {
+        xPercent: -25,
+        opacity: 0,
+      })
+      .from(refs.button.current, {
+        xPercent: -25,
+        opacity: 0,
+      })
+      .from(refs.image.current, {
+        scale: 0.95,
+        opacity: 0,
+      })
+      .from(refs.circles[0].current, {
+        scale: 0.5,
+        opacity: 0,
+        ease: 'back',
+      })
+      .from(refs.circles[1].current, {
+        scale: 0.5,
+        opacity: 0,
+        ease: 'back',
+      });
+  });
+
+  useMouseMove(refs.circles[0], 10);
+  useMouseMove(refs.circles[1], 20);
+
   return (
-    <section className={clsx(s.section, 'container')}>
+    <section className={clsx(s.section, 'container')} ref={refs.section}>
       <Background className={s.bg}>
-        <div className={clsx(s.circle, s._top)}>
+        <div className={clsx(s.circle, s._top)} ref={refs.circles[0]}>
           <div className={s.circleInner} />
         </div>
-        <div className={clsx(s.circle, s._bottom)}>
+        <div className={clsx(s.circle, s._bottom)} ref={refs.circles[1]}>
           <div className={s.circleInner} />
         </div>
       </Background>
       <div className={s.inner}>
         <div className={s.info}>
-          <MainHeading className={s.heading}>Hi! I&apos;m Alex</MainHeading>
-          <p className={s.text}>a frontend developer</p>
-          <div className={s.buttonBox}>
+          <MainHeading className={s.heading} ref={refs.heading}>Hi! I&apos;m Alex</MainHeading>
+          <p className={s.text} ref={refs.text}>a frontend developer</p>
+          <div className={s.buttonBox} ref={refs.button}>
             <MainButton
               className={s.button}
               href=''
@@ -35,7 +91,7 @@ function HeroSection(): React.JSX.Element {
             />
           </div>
         </div>
-        <div className={s.imageBox}>
+        <div className={s.imageBox} ref={refs.image}>
           <Image
             className={s.image}
             src={`/img/avatar-big.png`}

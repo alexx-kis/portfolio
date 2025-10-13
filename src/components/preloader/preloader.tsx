@@ -2,7 +2,7 @@
 
 import gsap from 'gsap';
 import { useEffect, useState } from 'react';
-import './preloader.scss';
+import s from './preloader.module.scss';
 
 // ^======================== Preloader ========================^ //
 
@@ -36,8 +36,8 @@ function Preloader(): React.JSX.Element | null {
   }
 
   return (
-    <div className='preloader'>
-      <div className='preloader__element'></div>
+    <div className={s.preloader}>
+      <div className={s.element} />
     </div>
 
   );

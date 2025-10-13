@@ -1,5 +1,5 @@
 import { AppRoute } from '@/constants/const';
-import { useGlowingHover } from '@/hooks/useGlowingHover';
+import { useGlowingHover } from '@/hooks/use-glowing-hover';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
