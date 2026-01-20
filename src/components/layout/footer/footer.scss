@@ -1,9 +1,11 @@
+@use '../../../styles/abstracts/' as *;
+
 // $======================== footer ========================$ //
 
 .footer {
   padding-top: desk(40px);
   padding-bottom: desk(60px);
-  background-image: $blueGradient;
+  background-image: var(--orangeGradient);
 
   &__heading {
     margin-bottom: desk(30px);

@@ -1,16 +1,17 @@
 'use client';
 
 import gsap from 'gsap';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import s from './preloader.module.scss';
 
 // ^======================== Preloader ========================^ //
 
 function Preloader(): React.JSX.Element | null {
   const [isVisible, setIsVisible] = useState(true);
+  const preloaderRef = useRef<HTMLDivElement | null>(null);
 
   const handleWindowLoad = () => {
-    gsap.to('.preloader', {
+    gsap.to(preloaderRef.current, {
       opacity: 0,
       onComplete: () => {
         setIsVisible(false);
@@ -36,7 +37,7 @@ function Preloader(): React.JSX.Element | null {
   }
 
   return (
-    <div className={s.preloader}>
+    <div className={s.preloader} ref={preloaderRef}>
       <div className={s.element} />
     </div>
 

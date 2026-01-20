@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     unoptimized: true
   },
   sassOptions: {
-    prependData: `@use '@/styles/abstracts' as *;`,
+    // prependData: `@use '@/styles/abstracts' as *;`, // not working
   },
 };
 

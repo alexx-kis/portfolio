@@ -15,6 +15,7 @@ function HeaderSocials(): React.JSX.Element {
                 href={href}
                 className={s.link}
                 aria-label={label}
+                target='_blank'
               >
                 <Icon
                   className={s.icon}
