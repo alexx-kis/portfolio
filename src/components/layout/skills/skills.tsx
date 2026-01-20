@@ -6,7 +6,9 @@ import { SkillType } from '@/types/types';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import { RefObject } from 'react';
-import './skills.scss';
+import s from './skills.module.scss';
+import SmallHeading from '@/components/ui/small-heading/small-heading';
+import Container from '../container/container';
 
 // @======================== Skills ========================@ //
 
@@ -26,23 +28,23 @@ export default function Skills(skillsProps: SkillsProps) {
   return (
     <div
       className={clsx(
-        'skills',
+        s.skills,
         { '_expanded': pathname === AppRoute.ABOUT }
       )}
     >
-      <h3 className='skills__heading heading _small' ref={refs?.heading}>
+      <SmallHeading className={s.heading} ref={refs?.heading}>
         My skills
-      </h3>
-      <div className='skills__container'>
+      </SmallHeading>
+      <Container className={s.container}>
         {data.map(({ skillsGroupTitle, skillsItems }, index) => {
           return (
-            <div key={index} className='skills__group' ref={(el) => { if (el && refs) refs.itemRows.current[index] = el; }}>
-              <p className='skills__group-title'>{skillsGroupTitle}</p>
-              <ul className='skills__list'>
+            <div key={index} className={s.group} ref={(el) => { if (el && refs) refs.itemRows.current[index] = el; }}>
+              <p className={s['group-title']}>{skillsGroupTitle}</p>
+              <ul className={s.list}>
                 {skillsItems.map(({ skillIcon, skillName, skillDescription }, index) => {
                   return (
                     <Skill
-                      className='skills__list-item'
+                      className={s['list-item']}
                       key={index}
                       skillIcon={skillIcon}
                       skillName={skillName}
@@ -54,7 +56,7 @@ export default function Skills(skillsProps: SkillsProps) {
             </div>
           );
         })}
-      </div>
+      </Container>
     </div>
   );
 }

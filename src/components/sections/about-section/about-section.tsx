@@ -27,18 +27,26 @@ function AboutSection(): React.JSX.Element {
   };
 
   useGSAP(() => {
-    [refs.heading.current, refs.textBox.current, refs.skillsHeading.current, refs.skillsRows.current, refs.button.current].forEach((element) => {
+    const animate = (element: HTMLDivElement | null) => {
       gsap.to(element, {
         opacity: 0,
         yPercent: -50,
-        stagger: 0.1,
+        stagger: 0.25,
         scrollTrigger: {
           trigger: element,
           start: '50% 25%',
-          end: '50% 0%',
+          end: '100% 0%',
           scrub: 1,
         }
       });
+    };
+
+    [refs.heading.current, refs.textBox.current, refs.skillsHeading.current, refs.button.current].forEach((element) => {
+      animate(element);
+    });
+
+    refs.skillsRows.current.forEach((row) => {
+      animate(row);
     });
   });
 

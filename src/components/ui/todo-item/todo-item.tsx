@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { ChangeEvent } from 'react';
-import './todo-item.scss';
+import s from './todo-item.module.scss';
 
 // ^======================== TodoItem ========================^ //
 
@@ -20,18 +20,18 @@ function TodoItem(todoItemProps: TodoItemProps): React.JSX.Element {
   return (
     <div
       className={clsx(
-        'todo-item',
+        s['todo-item'],
         { '_checked': checked }
       )}
     >
       <label
-        className='todo-item__label'
+        className={s.label}
         style={{
           backgroundImage: checked ? ('url(/img/icons/checkbox-checked.svg)') : '',
         }}
       >
         <input
-          className='todo-item__input'
+          className={s.input}
           type='checkbox'
           name='todo-item-checkbox'
           id={id}
@@ -39,12 +39,12 @@ function TodoItem(todoItemProps: TodoItemProps): React.JSX.Element {
           onChange={handleCheckboxChange}
         />
       </label>
-      <p className='todo-item__text'>{value}</p>
+      <p className={s.text}>{value}</p>
       <button
-        className='todo-item__button'
+        className={s.button}
         onClick={onRemoveButtonClick}
       >
-        <div className='todo-item__button-cross'>+</div>
+        <div className={s['button-cross']}>+</div>
       </button>
     </div>
   );

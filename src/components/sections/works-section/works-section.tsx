@@ -1,11 +1,13 @@
 'use client';
 
+import Container from '@/components/layout/container/container';
 import WorksList from '@/components/layout/works-list/works-list';
+import Heading from '@/components/ui/heading/heading';
 import MainButton from '@/components/ui/main-button/main-button';
 import { AppRoute, basePath } from '@/constants/const';
 import { WORKS } from '@/data/works';
 import { useTransitionLink } from '@/hooks/use-transition-link';
-import './works-section.scss';
+import s from './works-section.module.scss';
 
 // @======================== WorksSection ========================@ //
 
@@ -15,13 +17,13 @@ function WorksSection(): React.JSX.Element {
   const { handleTransition } = useTransitionLink();
 
   return (
-    <section className='works scroll' id='works'>
-      <div className='container'>
-        <div className='works__inner'>
-          <h2 className='works__heading heading'>My works</h2>
+    <section className={s['works-section']} id='works'>
+      <Container>
+        <div className={s.inner}>
+          <Heading className={s.heading}>My works</Heading>
           <WorksList worksList={worksList} />
           <MainButton
-            className='works__button'
+            className={s.button}
             href={AppRoute.WORKS}
             text='See more'
             iconPath={`${basePath}/img/icons/go-to-arrow.svg`}
@@ -30,7 +32,7 @@ function WorksSection(): React.JSX.Element {
             }}
           />
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

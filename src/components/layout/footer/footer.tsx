@@ -1,24 +1,24 @@
+import Heading from '@/components/ui/heading/heading';
 import Icon from '@/components/ui/icon/icon';
 import { CONTACTS } from '@/data/contacts';
-import './footer.scss';
+import Container from '../container/container';
+import s from './footer.module.scss';
 
 // $======================== Footer ========================$ //
 
 function Footer(): React.JSX.Element {
   return (
-    <footer className='footer' id='contact'>
-      <div className='container'>
-        <div className='footer__inner'>
-          <h2 className='footer__heading heading'>
-            Connect with me
-          </h2>
-          <ul className='footer__list'>
+    <footer className={s.footer} id='contact'>
+      <Container>
+        <div className={s.inner}>
+          <Heading className={s.heading}>Connect with me</Heading>
+          <ul className={s.list}>
             {CONTACTS.map(({ href, icon, text }) => {
               return (
-                <li key={text} className='footer__item'>
-                  <a href={href} className='footer__link' target='_blank'>
+                <li key={text} className={s.item}>
+                  <a href={href} className={s.link} target='_blank'>
                     <Icon
-                      className='footer__link-icon'
+                      className={s['link-icon']}
                       src={icon}
                       width={45}
                       height={45}
@@ -30,7 +30,7 @@ function Footer(): React.JSX.Element {
             })}
           </ul>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

@@ -1,0 +1,78 @@
+@use '../../../styles/abstracts/' as *;
+
+// @======================== skills ========================@ //
+
+.skills {
+  &._expanded {
+
+    .skills {
+      &__container {
+        gap: desk(40px, 40px);
+      }
+
+      &__group {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      &__group-title {
+        font-size: desk(24px, 20px);
+      }
+
+      &__list {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+.heading {
+  margin-bottom: desk(32px, 28px);
+  text-align: left;
+
+  @include TABLET {
+    margin-bottom: tab(28px, 20px);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: desk(20px, 16px);
+  padding-inline: 0;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  line-height: 1.2;
+  gap: desk(18px, 16px);
+  flex-wrap: wrap;
+
+  @include TABLET {
+    gap: tab(16px, 12px);
+  }
+}
+
+.group-title {
+  margin-right: 2.3dvh;
+  font-weight: 700;
+  letter-spacing: .1dvh;
+  font-size: desk(20px, 18px);
+
+  @include TABLET {
+    font-size: tab(18px, 16px);
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: desk(20px, 16px);
+
+  @include TABLET {
+    gap: tab(16px, 12px);
+  }
+}

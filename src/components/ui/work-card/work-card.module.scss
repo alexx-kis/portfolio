@@ -10,7 +10,7 @@
   background-color: #ffffff09;
   transition: all 250ms;
   border-radius: desk(16px);
-  backdrop-filter: blur(desk(4px));
+  backdrop-filter: blur(desk(2px));
 
   @include MIDDLE {
     flex-shrink: 0;
@@ -23,7 +23,8 @@
   }
 
   @include HOVER {
-    box-shadow: 0 0 desk(20px) desk(2px) #e5e5e544;
+    box-shadow: 0 0 desk(5px) desk(1px) #e5e5e544;
+    scale: 1.005;
   }
 }
 

@@ -1,6 +1,6 @@
 import WorkCard from '@/components/ui/work-card/work-card';
 import { WorkType } from '@/types/types';
-import './works-list.scss';
+import s from './works-list.module.scss';
 
 // $======================== Works ========================$ //
 
@@ -11,11 +11,11 @@ type WorksProps = {
 function WorksList(worksProps: WorksProps): React.JSX.Element {
   const { worksList } = worksProps;
   return (
-    <ul className='works-list'>
+    <ul className={s['works-list']}>
       {worksList.map(({ href, label, title, desc, technologies, imgSrc, gifSrc, gifMobSrc }) => {
         return (
           <WorkCard
-            className={'works-list__item'}
+            className={s.item}
             key={label}
             href={href}
             label={label}
