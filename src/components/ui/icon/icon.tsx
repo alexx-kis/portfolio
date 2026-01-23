@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
-import './icon.scss';
 
 // ^======================== Icon ========================^ //
 

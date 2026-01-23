@@ -1,0 +1,57 @@
+@use '../../../styles/abstracts/' as *;
+
+// @======================== about-hero ========================@ //
+
+.about_hero {
+  padding-block: desk(60px);
+  min-height: calc(100dvh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading {
+  text-align: left;
+  margin-bottom: desk(20px, 14px);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: desk(40px, 20px);
+  margin-bottom: desk(40px, 20px);
+
+  @include MIDDLE {
+    grid-template-columns: auto;
+  }
+}
+
+.image_wrapper {
+  @include MIDDLE {
+    width: 100%;
+    height: tab(400px, 200px);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include MIDDLE {
+      // object-position: 0 10%;
+      object-position: top;
+    }
+  }
+}
+
+.text_box {
+  display: flex;
+  flex-direction: column;
+  gap: desk(8px, 8px);
+  justify-content: space-between;
+}
+
+.text {
+  font-size: desk(18px, 16px);
+  line-height: 1.5;
+}

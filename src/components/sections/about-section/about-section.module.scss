@@ -1,0 +1,76 @@
+@use '../../../styles/abstracts/' as *;
+
+// @======================== about ========================@ //
+
+.section {
+  position: relative;
+  z-index: 1;
+  background-color: var(--bg);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: desk(50px, 25px);
+
+  @include TABLET {
+    gap: tab(25px, 20spx);
+  }
+
+  @include MIDDLE {
+    flex-direction: column;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: desk(32px);
+
+  @include TABLET {
+    gap: tab(32px, 18px);
+  }
+
+  @include MIDDLE {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.heading {
+  margin-bottom: desk(20px);
+  font-size: desk(40px, 30px);
+  text-align: left;
+  text-wrap: balance;
+
+  @include TABLET {
+    margin-bottom: tab(20px, 12px);
+    font-size: tab(30px, 24px);
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.5;
+}
+
+.textBox {
+  gap: desk(12px, 8px);
+  margin-top: auto;
+}
+
+.text {
+  font-size: desk(20px, 18px);
+  text-align: justify;
+
+  @include TABLET {
+    font-size: tab(20px, 14px);
+  }
+}
+
+.button {
+  align-self: flex-start;
+}

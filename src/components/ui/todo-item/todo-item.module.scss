@@ -1,0 +1,48 @@
+// ^======================== todo-item ========================^ //
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: desk(20px);
+
+  &._checked {
+    .todo-item {
+      &__text {
+        color: $middleGray;
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
+.label {
+  border: 1px solid #000;
+  border-radius: 50%;
+  background-position: center;
+  cursor: pointer;
+  transition: all 250ms;
+  @include square(desk(20px));
+
+  &:has(input:checked) {
+    background-color: $blue;
+  }
+}
+
+.input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.text {
+  transition: all 250ms;
+}
+
+.button {
+  margin-left: auto;
+}
+
+.button-cross {
+  font-size: desk(26px);
+  line-height: 1;
+  rotate: 45deg;
+}

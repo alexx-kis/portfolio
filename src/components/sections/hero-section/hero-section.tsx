@@ -1,35 +1,109 @@
 'use client';
 
+import Container from '@/components/shared/container/container';
+import Picture from '@/components/shared/picture/picture';
+import Background from '@/components/ui/background/background';
 import MainButton from '@/components/ui/main-button/main-button';
-import { basePath } from '@/constants/const';
-import { useHeroAnimation } from '@/hooks/animation/use-hero-animation';
-import './hero-section.scss';
+import MainHeading from '@/components/ui/main-heading/main-heading';
+import { basePath, Ext } from '@/constants/const';
+import { useMouseMove } from '@/hooks/use-mouse-move';
+import { gsap, useGSAP } from '@/lib/gsap';
+import clsx from 'clsx';
+import { useRef } from 'react';
+import s from './hero-section.module.scss';
 
 // @======================== HeroSection ========================@ //
 
 function HeroSection(): React.JSX.Element {
-  useHeroAnimation();
+
+  const refs = {
+    section: useRef<HTMLDivElement | null>(null),
+    heading: useRef<HTMLHeadingElement | null>(null),
+    text: useRef<HTMLDivElement | null>(null),
+    button: useRef<HTMLDivElement | null>(null),
+    image: useRef<HTMLDivElement | null>(null),
+    circles: [
+      useRef<HTMLDivElement | null>(null),
+      useRef<HTMLDivElement | null>(null),
+    ]
+  };
+
+  useGSAP(() => {
+    gsap.timeline({
+      defaults: {
+        duration: 0.3,
+        ease: 'power2.out'
+      }
+    })
+      .to(refs.section.current, {
+        autoAlpha: 1
+      })
+      .from(refs.heading.current, {
+        xPercent: -25,
+        opacity: 0,
+      })
+      .from(refs.text.current, {
+        xPercent: -25,
+        opacity: 0,
+      })
+      .from(refs.button.current, {
+        xPercent: -25,
+        opacity: 0,
+      })
+      .from(refs.image.current, {
+        scale: 0.98,
+        opacity: 0,
+        xPercent: 2,
+      })
+      .from(refs.circles[0].current, {
+        scale: 0.5,
+        opacity: 0,
+        ease: 'back',
+      })
+      .from(refs.circles[1].current, {
+        scale: 0.5,
+        opacity: 0,
+        ease: 'back',
+      });
+  });
+
+  useMouseMove(refs.circles[0], 10);
+  useMouseMove(refs.circles[1], 20);
+
   return (
-    <section
-      className='hero'
-      style={{
-        backgroundImage: `url(${basePath}/img/bg/hero-bg.jpg)`,
-      }}
-    >
-      <div className='container'>
-        <div className='hero__inner'>
-          <h1 className='hero__heading heading _main'>Hi! I&apos;m Alex</h1>
-          <p className='hero__text'>a frontend developer</p>
-          <div className='hero__button-box'>
-            <MainButton
-              bemClassName='hero__button'
-              href=''
-              text='Download CV'
-              iconPath={`${basePath}/img/icons/download-arrow.svg`}
+    <section className={clsx(s.section)} ref={refs.section}>
+      <Background className={s.bg}>
+        <div className={clsx(s.circle, s._top)} ref={refs.circles[0]}>
+          <div className={s.circleInner} />
+        </div>
+        <div className={clsx(s.circle, s._bottom)} ref={refs.circles[1]}>
+          <div className={s.circleInner} />
+        </div>
+      </Background>
+      <Container>
+        <div className={s.inner}>
+          <div className={s.info}>
+            <MainHeading className={s.heading} ref={refs.heading}>Hi! I&apos;m Alex</MainHeading>
+            <p className={s.text} ref={refs.text}>a frontend developer</p>
+            <div className={s.buttonBox} ref={refs.button}>
+              <MainButton
+                className={s.button}
+                href=''
+                text='Download CV'
+                iconPath={`${basePath}/img/icons/download-arrow.svg`}
+              />
+            </div>
+          </div>
+          <div className={s.imageBox} ref={refs.image}>
+            <Picture
+              className={s.image}
+              src={`/img/avatar-big`}
+              extensions={[Ext.WEBP, Ext.PNG]}
+              size={[1080]}
             />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

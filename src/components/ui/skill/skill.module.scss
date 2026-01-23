@@ -1,0 +1,80 @@
+@use '../../../styles/abstracts/' as *;
+
+//^======================== skill ========================^//
+
+.skill {
+  &._expanded {
+    align-items: center;
+    gap: desk(20px);
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    @include TABLET {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .inner {
+      width: desk(320px, 320px);
+
+      @include MIDDLE {
+        width: 100%;
+      }
+    }
+
+    .icon {
+      @include square(desk(36px, 24px));
+    }
+
+    .name {
+      font-size: desk(18px, 16px);
+
+      @include TABLET {
+        font-size: tab(18px, 14px);
+      }
+    }
+  }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: desk(10px);
+  padding-inline: desk(16px, 12px);
+  padding-block: desk(8px, 6px);
+  border: desk(1px) solid var(--secondary50);
+  border-radius: desk(16px);
+  background-color: $grayTransparent;
+  letter-spacing: 0.8;
+  position: relative;
+  backdrop-filter: blur(max(0.417vw, 6px));
+  transition: all 250ms;
+
+  @include TABLET {
+    height: tab(34px, 32px);
+    padding-inline: tab(12px, 10px);
+  }
+}
+
+
+.description {
+  font-size: desk(16px, 14px);
+}
+
+.icon {
+  @include square(desk(24px, 18px));
+
+  img {
+    @include square(100%);
+  }
+}
+
+.name {
+  font-size: desk(16px, 14px);
+
+  @include TABLET {
+    font-size: tab(16px, 14px);
+  }
+}

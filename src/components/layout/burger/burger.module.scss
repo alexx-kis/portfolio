@@ -1,0 +1,41 @@
+@use '../../../styles/abstracts/' as *;
+
+// ^======================== burger ========================^ //
+
+.burger {
+  cursor: pointer;
+  @include square(desk(32px));
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all .5s;
+  display: none;
+  gap: desk(6px);
+
+  @include MIDDLE {
+    display: flex;
+  }
+}
+
+._active {
+  justify-content: center;
+  transform: rotate(45deg);
+
+  .line {
+
+    &:first-child,
+    &:last-child {
+      position: absolute;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.line {
+  transition: all .3s;
+  width: desk(32px);
+  height: desk(3px);
+  background: #fff;
+  border-radius: desk(3px);
+}

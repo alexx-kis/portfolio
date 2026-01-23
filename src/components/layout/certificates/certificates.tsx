@@ -1,19 +1,17 @@
+import SmallHeading from '@/components/ui/small-heading/small-heading';
 import { CERTIFICATES } from '@/data/certificates';
 import Image from 'next/image';
-import './certificates.scss';
+import s from './certificates.module.scss';
 
 // $======================== Certificates ========================$ //
 
 function Certificates(): React.JSX.Element {
   return (
-    <div className='certificates'>
-      <h2 className='certificates__heading heading _small'>
-        My certificates
-      </h2>
-      <ul className='certificates__list'>
-
+    <div className={s.certificates}>
+      <SmallHeading className={s.heading}>My certificates</SmallHeading>
+      <ul className={s.list}>
         {CERTIFICATES.map(({ id, path }) => (
-          <li key={id} className='certificates__item certificate'>
+          <li key={id} className={s.item}>
             <Image
               src={path}
               alt=''

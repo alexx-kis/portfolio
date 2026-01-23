@@ -1,28 +1,28 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import './main-button.scss';
+import s from './main-button.module.scss';
 
 // ^======================== MainButton ========================^ //
 type MainButtonProps = {
-  bemClassName: string;
+  className: string;
   href: string;
   text: string;
   iconPath: string;
   onMainButtonClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 function MainButton(mainButtonProps: MainButtonProps): React.JSX.Element {
-  const { bemClassName, href, text, iconPath, onMainButtonClick } = mainButtonProps;
+  const { className, href, text, iconPath, onMainButtonClick } = mainButtonProps;
   return (
     <Link
-      className={`${bemClassName} main-button`}
+      className={clsx(className, s.mainButton)}
       href={href}
       onClick={onMainButtonClick}
     >
-      <div className='main-button__text'>
-        {text}
-      </div>
+      <div className={s.blink} />
+      <p className={s.text}>{text}</p>
       <Image
-        className='main-button__icon'
+        className={s.icon}
         src={iconPath}
         width={10}
         height={10}

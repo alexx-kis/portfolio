@@ -1,23 +1,24 @@
 import Icon from '@/components/ui/icon/icon';
 import { HEADER_SOCIALS_ITEMS } from '@/constants/header-socials-items';
-import './header-socials.scss';
+import s from './header-socials.module.scss'
 
 // ^======================== HeaderSocials ========================^ //
 
 function HeaderSocials(): React.JSX.Element {
   return (
-    <div className='header-socials'>
-      <ul className='header-socials__list'>
+    <div className={s.headerSocials}>
+      <ul className={s.list}>
         {HEADER_SOCIALS_ITEMS.map(({ href, label, icon }, index) => {
           return (
-            <li key={index} className='header-socials__item'>
+            <li key={index} className={s.item}>
               <a
                 href={href}
-                className='header-socials__link'
+                className={s.link}
                 aria-label={label}
+                target='_blank'
               >
                 <Icon
-                  className='header-socials__link'
+                  className={s.icon}
                   src={icon}
                   width={10}
                   height={10}

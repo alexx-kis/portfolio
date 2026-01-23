@@ -1,0 +1,48 @@
+@use '../../../styles/abstracts/' as *;
+
+// @======================== projects ========================@ //
+
+.projects-section {}
+
+.inner {
+  display: grid;
+  grid-template-areas:
+    'heading button'
+    'projects projects';
+
+  @include MIDDLE {
+    grid-template-areas:
+      'heading'
+      'projects'
+      'button';
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading {
+  grid-area: heading;
+}
+
+.list {
+  grid-area: projects;
+  margin-top: desk(60px, 40px);
+
+  @include TABLET {
+    margin-top: tab(40px, 20px);
+  }
+}
+
+.button {
+  align-self: center;
+  grid-area: button;
+  justify-self: end;
+
+  @include MIDDLE {
+    justify-self: start;
+  }
+}

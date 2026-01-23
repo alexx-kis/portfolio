@@ -1,0 +1,39 @@
+@use '../../../styles/abstracts/' as *;
+
+// $======================== projects-list ========================$ //
+
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: desk(14px);
+  margin-bottom: desk(40px, 32px);
+  justify-items: center;
+
+  @include DESKTOP {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &._detailed {
+    gap: desk(20px, 14px);
+    margin-bottom: desk(60px, 32px);
+  }
+
+  @include MIDDLE {
+    &:not(._detailed) {
+      display: flex;
+      width: 100vw;
+      height: calc(100dvh - mid(350px, 150px));
+      margin-inline: 0;
+      position: relative;
+      left: calc(-1 * mid(23px, 16px));
+      overflow: auto;
+      justify-items: start;
+      scroll-snap-type: x mandatory;
+      @include hide-scrollbar;
+    }
+  }
+
+  &._detailed {
+    grid-template-columns: auto;
+  }
+}

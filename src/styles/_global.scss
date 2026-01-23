@@ -6,10 +6,25 @@ html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   min-height: 100%;
+  --main: #EAEAEA;
+  --secondary: #9CA3AF;
+  --secondary50: #9ca3af80;
+  --bg: #1b1b1b;
+  --bgDark: #0f0f0f;
+  --bgSecondary: #28292b;
+  --accent: #1e6372;
+  --hover: #2e95af;
+  --orange: #ce631c;
+  --lightOrange: #f59236d3;
+  --white: #fff;
+  --white50: #ffffff80;
+  --orangeGradient: linear-gradient(to right, var(--orange), var(--lightOrange));
+  --grayGradient: linear-gradient(135deg, var(--bg) 0%, var(--bgSecondary) 100%);
+  --radialGradient: radial-gradient(var(--orange), var(--lightOrange));
 }
 
 body {
-  background-image: $mainGradient;
+  background-image: var(--grayGradient);
   transition: opacity 250ms;
 }
 
@@ -17,21 +32,7 @@ body {
   overflow: hidden;
 }
 
-.wrapper {
-  width: 100%;
-  // min-height: 100%;
-  overflow: clip;
-  position: relative;
-  color: #fff;
-  font-family: lato, Arial, Helvetica, sans-serif;
-  line-height: 1.4;
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
-}
-
 .sections-wrapper {
-  background-image: $mainGradient;
   margin-top: calc(-1 * desk(4px));
   color: #fff;
   box-shadow: 0 -80px 50px 50px #1e3040;
@@ -41,22 +42,10 @@ body {
 }
 
 section {
-  padding-block: desk(60px, 50px);
+  padding-block: desk(70px, 60px);
 
   @include TABLET {
     padding-block: tab(50px, 40px);
-  }
-}
-
-.container {
-  max-width: desk(1440px);
-  height: 100%;
-
-  margin-inline: auto;
-  padding-inline: desk(40px, 32px);
-
-  @include TABLET {
-    padding-inline: tab(32px, 16px);
   }
 }
 

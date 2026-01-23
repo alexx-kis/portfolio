@@ -1,0 +1,12 @@
+@use '../../../styles/abstracts/' as *;
+
+.heading {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: desk(64px, 50px);
+  font-weight: 900;
+  // text-align: center;
+
+  @include TABLET {
+    font-size: tab(50px, 30px);
+  }
+}

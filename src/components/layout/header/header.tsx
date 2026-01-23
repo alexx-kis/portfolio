@@ -1,53 +1,42 @@
 'use client';
+import { OpenElement } from '@/constants/const';
 import { MediaQuery } from '@/constants/viewport';
 import { useMediaQuery } from '@/hooks/use-media-query';
-import { isEscapeKey } from '@/utils/utils';
-import React, { useEffect, useState } from 'react';
+import { addOpenElement, dropOpenElement, getOpenElements } from '@/store/processes/open-element.process';
+import { useAppDispatch, useAppSelector } from '@/store/store-hooks';
+import clsx from 'clsx';
+import React from 'react';
 import Burger from '../burger/burger';
-import HeaderInner from '../header-inner/header-inner';
-import './header.scss';
+import Menu from '../menu/menu';
+import s from './header.module.scss';
 
 // $======================== Header ========================$ //
 
 function Header(): React.JSX.Element {
-  const [isInnerOpen, setIsInnerOpen] = useState(false);
   const isMobileScreen = useMediaQuery(MediaQuery.MOBILE);
+  const dispatch = useAppDispatch();
+  const openElements = useAppSelector(getOpenElements);
 
   const handleBurgerClick = () => {
-    setIsInnerOpen(!isInnerOpen);
+    if (openElements.includes(OpenElement.ASIDE)) {
+      dispatch(dropOpenElement(OpenElement.ASIDE));
+    } else {
+      dispatch(addOpenElement(OpenElement.ASIDE));
+    }
   };
-
-  const handleHeaderMenuLinkClick = () => {
-    setIsInnerOpen(false);
-  };
-
-  useEffect(() => {
-    const handleKeyDown = (evt: KeyboardEvent) => {
-      if (isEscapeKey(evt)) {
-        setIsInnerOpen(false);
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
 
   return (
-    <header className='header'>
-      <div className='container'>
-
-        <HeaderInner isOpen={isInnerOpen} onHeaderLinkClick={handleHeaderMenuLinkClick} />
+    <header className={s.header}>
+      <div className={clsx(s.inner)}>
+        {!isMobileScreen && <Menu className={s.menu} />}
 
         {isMobileScreen && (
           <Burger
-            isActive={isInnerOpen}
+            isActive={openElements.includes(OpenElement.ASIDE)}
             onBurgerClick={handleBurgerClick}
+            className={s.burger}
           />
         )}
-
       </div>
     </header>
   );
