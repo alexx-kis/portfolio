@@ -1,14 +1,14 @@
 'use client';
 
 import Container from '@/components/shared/container/container';
+import Picture from '@/components/shared/picture/picture';
 import Background from '@/components/ui/background/background';
 import MainButton from '@/components/ui/main-button/main-button';
 import MainHeading from '@/components/ui/main-heading/main-heading';
-import { basePath } from '@/constants/const';
+import { basePath, Ext } from '@/constants/const';
 import { useMouseMove } from '@/hooks/use-mouse-move';
 import { gsap, useGSAP } from '@/lib/gsap';
 import clsx from 'clsx';
-import Image from 'next/image';
 import { useRef } from 'react';
 import s from './hero-section.module.scss';
 
@@ -95,12 +95,11 @@ function HeroSection(): React.JSX.Element {
             </div>
           </div>
           <div className={s.imageBox} ref={refs.image}>
-            <Image
+            <Picture
               className={s.image}
-              src={`/img/avatar-big.png`}
-              alt=''
-              width={1080}
-              height={1080}
+              src={`/img/avatar-big`}
+              extensions={[Ext.WEBP, Ext.PNG]}
+              size={[1080]}
             />
           </div>
         </div>
