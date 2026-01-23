@@ -38,7 +38,8 @@
     object-fit: cover;
 
     @include MIDDLE {
-      object-position: 0 10%;
+      // object-position: 0 10%;
+      object-position: top;
     }
   }
 }
@@ -52,4 +53,5 @@
 
 .text {
   font-size: desk(18px, 16px);
+  line-height: 1.5;
 }

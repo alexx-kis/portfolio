@@ -14,8 +14,9 @@ export type WorkType = {
   label: string;
   title: string;
   desc: string;
+  fullDesc: string;
   technologies: string[];
   imgSrc: string;
-  gifSrc: string;
-  gifMobSrc: string;
+  gifSrc?: string;
+  gifMobSrc?: string;
 };

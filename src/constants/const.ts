@@ -5,7 +5,7 @@ export const basePath = process.env.NODE_ENV === 'production'
 export enum AppRoute {
   MAIN = '/',
   ABOUT = '/about',
-  WORKS = '/works'
+  PROJECTS = '/projects'
 }
 
 export const HEADER_MENU_ITEMS = [
@@ -18,8 +18,8 @@ export const HEADER_MENU_ITEMS = [
     name: 'About me',
   },
   {
-    link: AppRoute.WORKS,
-    name: 'My works',
+    link: AppRoute.PROJECTS,
+    name: 'My projects',
   },
   {
     link: '#contact',

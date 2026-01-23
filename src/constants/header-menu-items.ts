@@ -15,8 +15,8 @@ export const HEADER_MENU_ITEMS: HeaderMenuItem[] = [
     name: 'About me',
   },
   {
-    link: AppRoute.WORKS,
-    name: 'My works',
+    link: AppRoute.PROJECTS,
+    name: 'My projects',
   },
   {
     link: '#contact',

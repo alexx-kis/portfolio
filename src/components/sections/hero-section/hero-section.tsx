@@ -1,5 +1,6 @@
 'use client';
 
+import Container from '@/components/shared/container/container';
 import Background from '@/components/ui/background/background';
 import MainButton from '@/components/ui/main-button/main-button';
 import MainHeading from '@/components/ui/main-heading/main-heading';
@@ -50,8 +51,9 @@ function HeroSection(): React.JSX.Element {
         opacity: 0,
       })
       .from(refs.image.current, {
-        scale: 0.95,
+        scale: 0.98,
         opacity: 0,
+        xPercent: 2,
       })
       .from(refs.circles[0].current, {
         scale: 0.5,
@@ -69,7 +71,7 @@ function HeroSection(): React.JSX.Element {
   useMouseMove(refs.circles[1], 20);
 
   return (
-    <section className={clsx(s.section, 'container')} ref={refs.section}>
+    <section className={clsx(s.section)} ref={refs.section}>
       <Background className={s.bg}>
         <div className={clsx(s.circle, s._top)} ref={refs.circles[0]}>
           <div className={s.circleInner} />
@@ -78,29 +80,31 @@ function HeroSection(): React.JSX.Element {
           <div className={s.circleInner} />
         </div>
       </Background>
-      <div className={s.inner}>
-        <div className={s.info}>
-          <MainHeading className={s.heading} ref={refs.heading}>Hi! I&apos;m Alex</MainHeading>
-          <p className={s.text} ref={refs.text}>a frontend developer</p>
-          <div className={s.buttonBox} ref={refs.button}>
-            <MainButton
-              className={s.button}
-              href=''
-              text='Download CV'
-              iconPath={`${basePath}/img/icons/download-arrow.svg`}
+      <Container>
+        <div className={s.inner}>
+          <div className={s.info}>
+            <MainHeading className={s.heading} ref={refs.heading}>Hi! I&apos;m Alex</MainHeading>
+            <p className={s.text} ref={refs.text}>a frontend developer</p>
+            <div className={s.buttonBox} ref={refs.button}>
+              <MainButton
+                className={s.button}
+                href=''
+                text='Download CV'
+                iconPath={`${basePath}/img/icons/download-arrow.svg`}
+              />
+            </div>
+          </div>
+          <div className={s.imageBox} ref={refs.image}>
+            <Image
+              className={s.image}
+              src={`/img/avatar-big.png`}
+              alt=''
+              width={1080}
+              height={1080}
             />
           </div>
         </div>
-        <div className={s.imageBox} ref={refs.image}>
-          <Image
-            className={s.image}
-            src={`/img/avatar-big.png`}
-            alt=''
-            width={1080}
-            height={1080}
-          />
-        </div>
-      </div>
+      </Container>
     </section>
   );
 }

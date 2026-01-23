@@ -1,5 +1,5 @@
 import AboutSection from '@/components/sections/about-section/about-section';
-import WorksSection from '@/components/sections/works-section/works-section';
+import ProjectsSection from '@/components/sections/projects-section/projects-section';
 import { Metadata } from 'next';
 import HeroSection from '../components/sections/hero-section/hero-section';
 
@@ -14,7 +14,7 @@ export default function Page() {
     <main>
       <HeroSection />
       <AboutSection />
-      <WorksSection />
+      <ProjectsSection />
     </main>
   );
 }

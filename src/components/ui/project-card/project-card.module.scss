@@ -1,0 +1,171 @@
+@use '../../../styles/abstracts/' as *;
+
+// ^======================== project-card ========================^ //
+
+.project-card {
+  width: 100%;
+  height: 100%;
+  padding: desk(16px);
+  border: desk(1px) solid var(--secondary50);
+  border-radius: desk(16px);
+  background-color: #ffffff09;
+  backdrop-filter: blur(desk(2px));
+  transition: all 250ms;
+
+  @include MIDDLE {
+    flex-shrink: 0;
+    width: 100vw;
+    padding-inline: 20px;
+    border: none;
+    background-color: transparent;
+    backdrop-filter: none;
+    scroll-snap-align: start;
+  }
+
+  @include HOVER {
+    box-shadow: 0 0 desk(2px) desk(2px) #e5e5e58a;
+  }
+
+  &._detailed {
+    width: auto;
+    padding-inline: 20px;
+    border: desk(1px) solid var(--secondary50);
+    background-color: #ffffff09;
+    backdrop-filter: blur(desk(2px));
+
+    @include MIDDLE {
+      padding: 0;
+    }
+
+    .link {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: desk(30px, 16px);
+
+      @include MIDDLE {
+        container-type: initial;
+        border: none;
+        background-color: transparent;
+        backdrop-filter: none;
+        grid-template-columns: auto;
+      }
+    }
+
+    .image-box {
+      margin-bottom: 0;
+    }
+
+    .description {
+      font-size: desk(18px, 16px);
+
+      @include TABLET {
+        font-size: tab(16px, 14px);
+      }
+    }
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+
+  @include MIDDLE {
+    justify-content: space-between;
+    gap: 10px;
+    width: auto;
+    height: 100%;
+    padding: 10px;
+    overflow: clip;
+    border: desk(1px) solid var(--secondary50);
+    border-radius: inherit;
+    box-shadow: none;
+    background-color: #ffffff09;
+    backdrop-filter: blur(desk(4px));
+    container-type: size;
+  }
+}
+
+.image-box {
+  width: 100%;
+  // aspect-ratio: 16 / 9;
+  margin-bottom: desk(14px, 10px);
+  overflow: clip;
+
+  @include MIDDLE {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    aspect-ratio: unset;
+    margin-bottom: 0;
+    overflow: clip;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  // aspect-ratio: 16 / 9;
+  overflow: clip;
+  // @include border-radius-top(desk(10px));
+  border-radius: desk(10px);
+  object-fit: cover;
+  transition: all .3s;
+
+  @include MIDDLE {
+    object-fit: contain;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: desk(20px);
+  padding-inline: desk(10px);
+}
+
+.title {
+  font-size: desk(24px, 20px);
+  font-weight: 700;
+
+  @include TABLET {
+    font-size: tab(20px, 18px);
+  }
+}
+
+.description-box {
+  display: flex;
+  flex-direction: column;
+  gap: desk(8px, 6px);
+
+  @include TABLET {
+    gap: tab(6px, 4px);
+  }
+}
+
+.description {
+  font-size: desk(16px, 14px);
+
+  @include TABLET {
+    font-size: tab(14px, 12px);
+  }
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: desk(6px);
+  margin-top: auto;
+}
+
+.technology {
+  padding-inline: desk(8px);
+  padding-block: desk(4px);
+  border: desk(1px) solid #ffffffaa;
+  border-radius: desk(6px);
+  font-size: desk(14px);
+}
