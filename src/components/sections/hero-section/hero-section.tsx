@@ -97,7 +97,7 @@ function HeroSection(): React.JSX.Element {
           <div className={s.image_box} ref={refs.image}>
             <Picture
               className={s.image}
-              src={`/img/avatar-big`}
+              src={`${basePath}/img/avatar-big`}
               extensions={[Ext.WEBP, Ext.PNG]}
               size={[1080]}
             />
