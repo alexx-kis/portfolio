@@ -8,7 +8,7 @@ import s from './projects-hero.module.scss';
 
 function ProjectsHero(): React.JSX.Element {
   return (
-    <section className={s['projects-hero']}>
+    <section className={s.projects_hero}>
       <Container>
         <Heading className={s.heading}>
           My Projects

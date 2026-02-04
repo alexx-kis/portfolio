@@ -85,7 +85,7 @@ function HeroSection(): React.JSX.Element {
           <div className={s.info}>
             <MainHeading className={s.heading} ref={refs.heading}>Hi! I&apos;m Alex</MainHeading>
             <p className={s.text} ref={refs.text}>a frontend developer</p>
-            <div className={s.buttonBox} ref={refs.button}>
+            <div className={s.button_box} ref={refs.button}>
               <MainButton
                 className={s.button}
                 href=''
@@ -94,7 +94,7 @@ function HeroSection(): React.JSX.Element {
               />
             </div>
           </div>
-          <div className={s.imageBox} ref={refs.image}>
+          <div className={s.image_box} ref={refs.image}>
             <Picture
               className={s.image}
               src={`/img/avatar-big`}

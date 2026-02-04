@@ -2,7 +2,7 @@
 
 // ^======================== project-card ========================^ //
 
-.project-card {
+.project_card {
   width: 100%;
   height: 100%;
   padding: desk(16px);
@@ -43,15 +43,15 @@
       gap: desk(30px, 16px);
 
       @include MIDDLE {
-        container-type: initial;
+        grid-template-columns: auto;
         border: none;
         background-color: transparent;
         backdrop-filter: none;
-        grid-template-columns: auto;
+        container-type: initial;
       }
     }
 
-    .image-box {
+    .image_box {
       margin-bottom: 0;
     }
 
@@ -88,11 +88,15 @@
   }
 }
 
-.image-box {
+.image_box {
   width: 100%;
-  // aspect-ratio: 16 / 9;
   margin-bottom: desk(14px, 10px);
   overflow: clip;
+  min-height: desk(360px, 200px);
+
+  @include TABLET {
+    min-height: tab(200px, 0);
+  }
 
   @include MIDDLE {
     flex: 1 1 auto;
@@ -103,18 +107,18 @@
     aspect-ratio: unset;
     margin-bottom: 0;
     overflow: clip;
+    min-height: auto;
   }
 }
 
 .image {
   width: 100%;
   height: 100%;
-  // aspect-ratio: 16 / 9;
   overflow: clip;
-  // @include border-radius-top(desk(10px));
   border-radius: desk(10px);
   object-fit: cover;
   transition: all .3s;
+  object-position: top;
 
   @include MIDDLE {
     object-fit: contain;
@@ -125,6 +129,7 @@
   display: flex;
   flex-direction: column;
   gap: desk(20px);
+  height: 100%;
   padding-inline: desk(10px);
 }
 
@@ -137,7 +142,7 @@
   }
 }
 
-.description-box {
+.description_box {
   display: flex;
   flex-direction: column;
   gap: desk(8px, 6px);

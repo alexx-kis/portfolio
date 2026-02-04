@@ -13,10 +13,7 @@ function Burger(burgerProps: BurgerProps): React.JSX.Element {
   const { isActive, onBurgerClick, className } = burgerProps;
   return (
     <div
-      className={clsx(
-        s.burger, className,
-        { [s._active]: isActive }
-      )}
+      className={clsx(s.burger, className, { [s._active]: isActive })}
       onClick={onBurgerClick}
     >
       {Array.from({ length: 3 }, (_, index) => (

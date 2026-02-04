@@ -68,17 +68,17 @@
   }
 }
 
-.dropdownLink {
+.dropdown_link {
   display: flex;
   align-items: center;
   color: var(--secondary);
 
-  &:hover .dropdownName {
+  &:hover .dropdown_name {
     color: var(--orange);
   }
 }
 
-.dropdownName {
+.dropdown_name {
   transition: all 250ms;
   font-size: desk(14px);
 

@@ -22,7 +22,7 @@ function ProjectsList(projectsProps: ProjectsProps): React.JSX.Element {
   const isDetailed = pathname === AppRoute.PROJECTS;
 
   return (
-    <ul className={clsx(className, s['projects-list'], { [s['_detailed']]: isDetailed })}>
+    <ul className={clsx(className, s.projects_list, { [s._detailed]: isDetailed })}>
       {projects.map((project) => {
         return (
           <ProjectCard

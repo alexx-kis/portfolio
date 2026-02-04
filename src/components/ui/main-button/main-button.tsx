@@ -4,6 +4,7 @@ import Link from 'next/link';
 import s from './main-button.module.scss';
 
 // ^======================== MainButton ========================^ //
+
 type MainButtonProps = {
   className: string;
   href: string;
@@ -11,11 +12,12 @@ type MainButtonProps = {
   iconPath: string;
   onMainButtonClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 };
+
 function MainButton(mainButtonProps: MainButtonProps): React.JSX.Element {
   const { className, href, text, iconPath, onMainButtonClick } = mainButtonProps;
   return (
     <Link
-      className={clsx(className, s.mainButton)}
+      className={clsx(className, s.main_button)}
       href={href}
       onClick={onMainButtonClick}
     >

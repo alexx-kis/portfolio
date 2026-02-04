@@ -17,7 +17,7 @@ function ProjectsSection(): React.JSX.Element {
   const { handleTransition } = useTransitionLink();
 
   return (
-    <section className={s['projects-section']} id='projects'>
+    <section className={s.projects_section} id='projects'>
       <Container>
         <div className={s.inner}>
           <Heading className={s.heading}>My projects</Heading>

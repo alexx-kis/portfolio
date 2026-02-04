@@ -18,7 +18,7 @@ function Footer(): React.JSX.Element {
                 <li key={text} className={s.item}>
                   <a href={href} className={s.link} target='_blank'>
                     <Icon
-                      className={s['link-icon']}
+                      className={s.link_icon}
                       src={icon}
                       width={45}
                       height={45}

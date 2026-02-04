@@ -4,25 +4,22 @@
 
 .skills {
   &._expanded {
+    .container {
+      gap: desk(40px, 40px);
+    }
 
-    .skills {
-      &__container {
-        gap: desk(40px, 40px);
-      }
+    .group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-      &__group {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    .group-title {
+      font-size: desk(24px, 20px);
+    }
 
-      &__group-title {
-        font-size: desk(24px, 20px);
-      }
-
-      &__list {
-        flex-direction: column;
-        gap: 20px;
-      }
+    .list {
+      flex-direction: column;
+      gap: 20px;
     }
   }
 }
@@ -40,8 +37,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: desk(20px, 16px);
+  gap: desk(40px, 32px);
   padding-inline: 0;
+
+  @include TABLET {
+    gap: tab(32px, 20px);
+  }
 }
 
 .group {
@@ -56,7 +57,7 @@
   }
 }
 
-.group-title {
+.group_title {
   margin-right: 2.3dvh;
   font-weight: 700;
   letter-spacing: .1dvh;

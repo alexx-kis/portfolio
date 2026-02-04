@@ -32,7 +32,7 @@ function ProjectCard(projectCardProps: ProjectCardProps): React.JSX.Element {
 
   return (
     <li
-      className={clsx(className, s['project-card'], { [s['_detailed']]: isDetailed })}
+      className={clsx(className, s.project_card, { [s._detailed]: isDetailed })}
     // onMouseEnter={() => {
     //   setIsHovered(true);
     // }}
@@ -41,7 +41,7 @@ function ProjectCard(projectCardProps: ProjectCardProps): React.JSX.Element {
     // }}
     >
       <a href={href} className={s.link} aria-label={label} target='_blank'>
-        <div className={s['image-box']}>
+        <div className={s.image_box}>
           <Image
             className={s.image}
             // src={!isMobileScreen ? (isHovered ? gifSrc : imgSrc) : gifMobSrc}
@@ -53,7 +53,7 @@ function ProjectCard(projectCardProps: ProjectCardProps): React.JSX.Element {
         </div>
         <div className={s.info}>
           <p className={s.title}>{title}</p>
-          <div className={s['description-box']}>
+          <div className={s.description_box}>
             {splitTextToParagraphs(isDetailed ? fullDesc : desc).map((paragraph, index) => (
               <p key={index} className={s.description}>{paragraph}</p>
             ))}

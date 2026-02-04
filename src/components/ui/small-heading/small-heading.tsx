@@ -15,6 +15,6 @@ export default function SmallHeading(smallHeadingProps: SmallHeadingProps) {
   const { children, className, ref } = smallHeadingProps;
 
   return (
-    <h3 className={clsx(s['small-heading'], className)} ref={ref}>{children}</h3>
+    <h3 className={clsx(s.small_heading, className)} ref={ref}>{children}</h3>
   );
 }

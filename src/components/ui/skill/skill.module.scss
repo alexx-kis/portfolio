@@ -53,7 +53,7 @@
   transition: all 250ms;
 
   @include TABLET {
-    height: tab(34px, 32px);
+    // height: tab(34px, 32px);
     padding-inline: tab(12px, 10px);
   }
 }

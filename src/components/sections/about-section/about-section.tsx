@@ -61,7 +61,7 @@ function AboutSection(): React.JSX.Element {
               <Heading className={s.heading} ref={refs.heading}>
                 Hi! My name is Alex and I am a frontend developer
               </Heading>
-              <div className={s.textBox} ref={refs.textBox}>
+              <div className={s.text_box} ref={refs.textBox}>
                 {splitTextToParagraphs(aboutSectionText).map((paragraph, index) => (
                   <p key={index} className={s.text}>
                     {paragraph}
@@ -69,7 +69,10 @@ function AboutSection(): React.JSX.Element {
                 ))}
               </div>
             </div>
-            <Skills data={SKILLS_CONCISE} refs={{ heading: refs.skillsHeading, itemRows: refs.skillsRows }} />
+            <Skills
+              data={SKILLS_CONCISE}
+              refs={{ heading: refs.skillsHeading, itemRows: refs.skillsRows }}
+            />
           </div>
           <div ref={refs.button}>
             <MainButton

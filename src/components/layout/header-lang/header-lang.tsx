@@ -25,8 +25,8 @@ function HeaderLang(): React.JSX.Element {
         <div className={s.name}>EN</div>
       </div>
       <div className={s.dropdown}>
-        <div className={s.dropdownItem}>
-          <button type='button' className={s.dropdownLink} onClick={handleButtonClick}>
+        <div className={s.dropdown_item}>
+          <button type='button' className={s.dropdown_link} onClick={handleButtonClick}>
             <div className={s.icon}>
               <Image
                 src={`${basePath}/img/icons/rus.svg`}
@@ -35,7 +35,7 @@ function HeaderLang(): React.JSX.Element {
                 alt='russian'
               />
             </div>
-            <div className={s.dropdownName}>RU</div>
+            <div className={s.dropdown_name}>RU</div>
           </button>
         </div>
       </div>
